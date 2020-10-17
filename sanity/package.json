@@ -22,6 +22,7 @@
     "@sanity/google-maps-input": "1.150.1",
     "@sanity/structure": "1.150.1",
     "@sanity/vision": "1.150.6",
+    "dotenv": "^8.2.0",
     "prop-types": "^15.7",
     "react": "^16.13",
     "react-dom": "^16.13",
