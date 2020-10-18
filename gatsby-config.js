@@ -9,6 +9,7 @@ module.exports = {
     description: 'The best pizza place anywhere!',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-sanity',
