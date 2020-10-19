@@ -13,7 +13,7 @@
     "clean": "gatsby clean",
     "pretest": "yarn lint:css",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint:css": "stylelint '**/*.css'"
+    "lint:css": "stylelint **/*.js"
   },
   "dependencies": {
     "gatsby": "^2.24.67",
@@ -45,6 +45,8 @@
     "prettier": "^2.1.2",
     "stylelint": "^13.7.2",
     "stylelint-a11y": "^1.2.3",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^4.1.0",
@@ -63,7 +65,7 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.js": "stylelint --fix"
+    "*.js": "eslint --fix",
+    "*.js": "stylelint **/*.js"
   }
 }

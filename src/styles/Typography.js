@@ -9,8 +9,8 @@ const Typography = createGlobalStyle`
   }
 
   html {
-    font-family: FrenchFries, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--black);
+    font-family: FrenchFries, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   p,
@@ -24,8 +24,8 @@ const Typography = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-weight: normal;
     margin: 0;
+    font-weight: normal;
   }
 
   a {
@@ -38,10 +38,10 @@ const Typography = createGlobalStyle`
 
   mark,
   .mark {
-    background: var(--yellow);
+    display: inline;
     padding: 0 2px 2px 2px;
     margin: 0;
-    display: inline;
+    background: var(--yellow);
     line-height: 1;
   }
 

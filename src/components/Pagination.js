@@ -5,22 +5,25 @@ import styled from 'styled-components';
 
 const PaginationStyles = styled.div`
   display: flex;
-  text-align: center;
   border: 1px solid var(--grey);
   margin: 2rem 0;
   border-radius: 5px;
-  & > * {
-    padding: 1rem;
+  text-align: center;
+
+  & > a {
     flex: 1;
+    padding: 1rem;
     border-right: 1px solid var(--grey);
     text-decoration: none;
+
     &[aria-current='page'],
     &.current {
       color: var(--red);
     }
+
     &[disabled] {
-      pointer-events: none;
       color: var(--grey);
+      pointer-events: none;
     }
   }
 `;

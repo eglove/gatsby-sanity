@@ -11,14 +11,15 @@ const BeerGridStyles = styled.div`
 `;
 
 const SingleBeerStyles = styled.div`
-  border: 1px solid var(--grey);
   padding: 2rem;
+  border: 1px solid var(--grey);
   text-align: center;
+
   img {
+    display: grid;
     width: 100%;
     height: 200px;
     object-fit: contain;
-    display: grid;
     place-items: center;
   }
 `;

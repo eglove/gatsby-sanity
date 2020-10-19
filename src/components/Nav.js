@@ -5,40 +5,52 @@ import Logo from './Logo';
 
 const NavStyles = styled.nav`
   margin-bottom: 3rem;
+
   .logo {
     transform: translateY(-25%);
   }
+
   ul {
-    margin: -6rem 0 0 0;
-    padding: 0;
-    text-align: center;
-    list-style-type: none;
     display: grid;
-    grid-template-columns: 1fr 1fr auto 1fr 1fr;
-    grid-gap: 2rem;
     align-items: center;
+    padding: 0;
+    margin: -6rem 0 0 0;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    list-style-type: none;
+    text-align: center;
   }
+
   li {
     --rotate: -2deg;
-    transform: rotate(var(--rotate));
+
     order: 1;
+    transform: rotate(var(--rotate));
+
     &:nth-child(1) {
       --rotate: 1deg;
     }
+
     &:nth-child(2) {
       --rotate: -2.5deg;
     }
+
     &:nth-child(4) {
       --rotate: 2.5deg;
     }
-    &:hover {
+
+    &:hover,
+    &:focus {
       --rotate: 3deg;
     }
   }
+
   a {
     font-size: 3rem;
     text-decoration: none;
-    &:hover {
+
+    &:hover,
+    &:focus {
       color: var(--red);
     }
   }

@@ -22,22 +22,22 @@ const SliceMasterStyles = styled.div`
   }
 
   h2 {
-    transform: rotate(-2deg);
-    text-align: center;
-    font-size: 4rem;
-    margin-bottom: -2rem;
     position: relative;
     z-index: 2;
+    margin-bottom: -2rem;
+    font-size: 4rem;
+    text-align: center;
+    transform: rotate(-2deg);
   }
 
   .description {
-    background: var(--yellow);
+    position: relative;
+    z-index: 2;
     padding: 1rem;
     margin: -6rem 2rem 2rem 2rem;
-    z-index: 2;
-    position: relative;
-    transform: rotate(1deg);
+    background: var(--yellow);
     text-align: center;
+    transform: rotate(1deg);
   }
 `;
 

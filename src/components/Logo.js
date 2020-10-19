@@ -3,36 +3,40 @@ import styled from 'styled-components';
 import stripes from '../assets/images/stripes.svg';
 
 const LogoStyles = styled.div`
-  /* This value controls the entire size of the logo*/
-  font-size: clamp(1px, 0.65vw, 8px);
+  /* This value controls the entire size of the logo */
+  --borderSize: 1em;
+
+  display: flex;
   width: 30em;
   height: 30em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border: var(--borderSize) solid white;
   margin: 0;
-  --borderSize: 1em;
   background: white url(${stripes});
   background-size: 150em;
-  border: var(--borderSize) solid white;
-  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  font-size: clamp(1px, 0.65vw, 8px);
+
   .inner {
-    margin: var(--borderSize);
-    flex: 1;
-    background: white;
     display: grid;
-    grid-template-rows: 20% 1fr 1fr;
+    flex: 1;
     align-content: center;
+    margin: var(--borderSize);
+    background: white;
+    grid-template-rows: 20% 1fr 1fr;
   }
+
   .est {
-    font-size: 1.5em;
     align-self: center;
+    font-size: 1.5em;
   }
+
   h1 {
     display: grid;
-    grid-template-rows: 8fr 2fr;
     align-items: center;
     margin: 0;
-    grid-row: 2 / span 2;
     grid-gap: 2em;
+    grid-row: 2 / span 2;
+    grid-template-rows: 8fr 2fr;
     transform: translateY(-0.7em);
   }
 
@@ -41,58 +45,72 @@ const LogoStyles = styled.div`
     letter-spacing: 0.2em;
     transform: translateY(-0.15em);
   }
+
   .slicks {
-    transform: scale(1.4);
     display: block;
-    text-shadow: 0.18em 0.18em 0 rgba(0, 0, 0, 0.05);
     perspective: 100px;
+    text-shadow: 0.18em 0.18em 0 rgba(0, 0, 0, 0.05);
+    transform: scale(1.4);
   }
+
   .letter {
-    font-size: 5em;
-    color: var(--red);
     --scale: 1;
     --rotate: -10deg;
     --translateX: 0;
     --translateY: 0;
     --rotateX: 0deg;
+
+    display: inline-block;
+    color: var(--red);
+    font-size: 5em;
+    line-height: 1;
     transform: scale(var(--scale)) rotate(var(--rotate))
       translateX(var(--translateX)) translateY(var(--translateY))
       rotateX(var(--rotateX));
-    display: inline-block;
-    line-height: 1;
     transition: transform 0.3s;
+
     &.S {
       --translateX: -0.05;
     }
+
     &.l {
       --rotate: 2deg;
       --scale: 1.4;
       --translateX: 0.05em;
       --translateY: -0.05em;
     }
+
     &.i {
       --scale: 0.9;
       --translateY: -0.1em;
       --translateX: 0.1em;
     }
+
     &.c {
       --rotate: 3deg;
       --scale: 0.9;
       --translateX: 0.1em;
       --translateY: 0.23em;
     }
+
     &.k {
       --rotate: -12deg;
       --scale: 1.2;
       --translateX: 0.06em;
     }
+
     &.apos {
       --translateX: 0.1em;
     }
+
     &.s {
       --rotate: 12deg;
       --scale: 0.9;
       --translateY: -0.14em;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
     }
   }
 `;

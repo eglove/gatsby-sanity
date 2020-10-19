@@ -5,20 +5,23 @@ import styled from 'styled-components';
 const ToppingStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   margin-bottom: 4rem;
+  gap: 1rem;
+
   a {
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 0 1rem;
     align-items: center;
     padding: 5px;
     background: var(--grey);
     border-radius: 2px;
+    grid-gap: 0 1rem;
+    grid-template-columns: auto 1fr;
+
     &.count {
-      background: white;
       padding: 2px 5px;
+      background: white;
     }
+
     &[aria-current='page'] {
       background: var(--yellow);
     }

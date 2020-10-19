@@ -12,12 +12,12 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    background-attachment: fixed;
     background-image: url(${bg});
     background-size: 450px;
-    background-attachment: fixed;
     font-size: 10px;
-    scrollbar-width: thin;
     scrollbar-color: var(--red) var(--white);
+    scrollbar-width: thin;
   }
 
   body {
@@ -25,22 +25,22 @@ const GlobalStyles = createGlobalStyle`
   }
 
   fieldset {
-    border-color: rgba(0, 0, 0, 0.1);
     border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
   }
 
   @media screen and (prefers-reduced-motion: reduce) {
     button {
-      background: var(--red);
-      color: white;
-      border: 0;
       padding: 0.6rem 1rem;
+      border: 0;
+      background: var(--red);
       border-radius: 2px;
+      box-shadow: var(--cast) var(--cast) 0 var(--grey);
+      color: white;
       cursor: pointer;
 
       --cast: 2px;
 
-      box-shadow: var(--cast) var(--cast) 0 var(--grey);
       text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
       transition: none;
 
@@ -52,16 +52,16 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    background: var(--red);
-    color: white;
-    border: 0;
     padding: 0.6rem 1rem;
+    border: 0;
+    background: var(--red);
     border-radius: 2px;
+    box-shadow: var(--cast) var(--cast) 0 var(--grey);
+    color: white;
     cursor: pointer;
 
     --cast: 2px;
 
-    box-shadow: var(--cast) var(--cast) 0 var(--grey);
     text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.2s;
 
@@ -81,14 +81,14 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body::-webkit-scrollbar-thumb {
+    border: 3px solid var(--white);
     background-color: var(--red);
     border-radius: 6px;
-    border: 3px solid var(--white);
   }
 
   hr {
-    border: 0;
     height: 8px;
+    border: 0;
     background-image: url(${stripes});
     background-size: 1500px;
   }
@@ -98,11 +98,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .tilt {
-    transform: rotate(-2deg);
     position: relative;
     display: inline-block;
+    transform: rotate(-2deg);
   }
-
 `;
 
 export default GlobalStyles;
