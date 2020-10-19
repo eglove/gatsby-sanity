@@ -64,6 +64,6 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.css": "stylelint --fix"
+    "*.js": "stylelint --fix"
   }
 }

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Nav from './Nav';
 import Footer from './Footer';
 import 'normalize.css';
-import GlobalStyles from '../styles/GlobalStyles.css';
-import TypographyCss from '../styles/Typography.css';
+import GlobalStyles from '../styles/GlobalStyles';
+import Typography from '../styles/Typography';
 import stripes from '../assets/images/stripes.svg';
 
 const ContentStyles = styled.div`
@@ -22,6 +22,7 @@ const SiteBorderStyles = styled.div`
   padding: clamp(5px, 1vw, 25px);
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.044);
   border: 5px solid white;
+
   @media (max-width: 1100px) {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -32,7 +33,7 @@ export default function Layout({ children }) {
   return (
     <>
       <GlobalStyles />
-      <TypographyCss />
+      <Typography />
       <SiteBorderStyles>
         <ContentStyles>
           <Nav />
