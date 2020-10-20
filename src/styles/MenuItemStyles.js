@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const MenuItemStyles = styled.div`
+  position: relative;
   display: grid;
   align-content: center;
   align-items: center;
