@@ -15,11 +15,9 @@ const ContentStyles = styled.div`
 
 const SiteBorderStyles = styled.div`
   max-width: 1000px;
-  padding: 5px;
   padding: clamp(5px, 1vw, 25px);
   border: 5px solid white;
-  margin: 12rem auto 4rem auto;
-  margin-top: clamp(2rem, 10vw, 12rem);
+  margin: clamp(2rem, 10vw, 12rem) auto 4rem auto;
   background: white url(${stripes});
   background-size: 1500px;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.044);
