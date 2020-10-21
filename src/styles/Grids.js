@@ -26,7 +26,7 @@ export const ItemStyles = styled.div`
     position: absolute;
     left: 0;
     width: 100%;
-    transform: rotate(-2deg) translateY(-50%);
+    transform: rotate(-2deg) translateY(-140%);
   }
 
   .mark {
