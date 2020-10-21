@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -16,18 +16,31 @@ export default function OrderPage({ data: { pizzas } }) {
   const { values, updateValue } = useForm({
     name: '',
     email: '',
+    maloneyBaloney: '',
   });
 
-  const { order, addToOrder, removeFromOrder } = usePizza({
+  const {
+    order,
+    addToOrder,
+    removeFromOrder,
+    error,
+    loading,
+    message,
+    submitOrder,
+  } = usePizza({
     pizzas,
-    input: values,
+    values,
   });
+
+  if (message) {
+    return <p>{message}</p>;
+  }
 
   return (
     <>
       <SEO title="Order a Pizza!" />
-      <OrderStyles>
-        <fieldset>
+      <OrderStyles onSubmit={submitOrder}>
+        <fieldset disabled={loading}>
           <legend>Your Info</legend>
           <label htmlFor="name">Name</label>
           <input
@@ -38,13 +51,20 @@ export default function OrderPage({ data: { pizzas } }) {
           />
           <label htmlFor="email">Email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             value={values.email}
             onChange={updateValue}
           />
+          <input
+            type="maloneyBaloney"
+            name="maloneyBaloney"
+            className="maloneyBaloney"
+            value={values.maloneyBaloney}
+            onChange={updateValue}
+          />
         </fieldset>
-        <fieldset className="menu">
+        <fieldset className="menu" disabled={loading}>
           <legend>Menu</legend>
           {pizzas.nodes.map((pizza, index) => (
             <MenuItemStyles key={index}>
@@ -58,9 +78,10 @@ export default function OrderPage({ data: { pizzas } }) {
                 <h2>{pizza.name}</h2>
               </div>
               <div>
-                {['S', 'M', 'L'].map((size) => (
+                {['S', 'M', 'L'].map((size, i) => (
                   <button
                     type="button"
+                    key={i}
                     onClick={() =>
                       addToOrder({
                         id: pizza.id,
@@ -75,7 +96,7 @@ export default function OrderPage({ data: { pizzas } }) {
             </MenuItemStyles>
           ))}
         </fieldset>
-        <fieldset className="order">
+        <fieldset className="order" disabled={loading}>
           <legend>Order</legend>
           <PizzaOrder
             order={order}
@@ -83,11 +104,14 @@ export default function OrderPage({ data: { pizzas } }) {
             pizzas={pizzas}
           />
         </fieldset>
-        <fieldset>
+        <fieldset disabled={loading}>
           <h3>
             Your Total is {formatMoney(calculateOrderTotal(order, pizzas))}
           </h3>
-          <button type="submit">Order Ahead</button>
+          <div>{error ? <p>Error: {error}</p> : ''}</div>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Placing Order...' : 'Order Ahead'}
+          </button>
         </fieldset>
       </OrderStyles>
     </>
