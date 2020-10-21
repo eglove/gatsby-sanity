@@ -14,7 +14,7 @@
     "pretest": "yarn lint:css",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "netlify": "netlify dev",
-    "prebuild": "netlify-lamda install",
+    "prebuild": "netlify-lambda install",
     "lint:css": "stylelint **/*.js"
   },
   "dependencies": {
