@@ -29,7 +29,8 @@ export default function useLatestData() {
       .then((res) => res.json())
       .then((res) => {
         // TODO check for errors
-        setHotSlices(res.data.StoreSettings.hotSlices);
+        console.log(res.data.StoreSettings);
+        setHotSlices(res.data.StoreSettings.hotslices);
         setSlicemasters(res.data.StoreSettings.slicemaster);
       });
   }, []);
